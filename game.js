@@ -13,7 +13,7 @@ var losingMessage;
 var won = false;
 var lost = false;
 var currentScore = 0;
-var winningScore = 100;
+var winningScore = 50;
 var currentLives = 3;
 
 // add collectable items to the game
@@ -22,15 +22,20 @@ function addItems() {
   createItem(600, 100, 'coin');
   createItem(675, 225, 'coin');
   createItem(500, 300, 'coin');
+  createItem(725, 350, 'coin');
   createItem(340, 400, 'coin');
   createItem(200, 500, 'coin');
   createItem(625, 500, 'coin');
   createItem(75, 325, 'coin');
   createItem(175, 275, 'coin');
+  createItem(325, 200, 'coin');
+  createItem(100, 200, 'coin');
   createItem(350, 100, 'poison');
   createItem(175, 50, 'star');
   createItem(370, 500, 'poison');
   createItem(100, 375, 'poison');
+  createItem(400, 300, 'poison');
+  createItem(675, 500, 'poison');
 }
 
 // add platforms to the game
@@ -139,7 +144,7 @@ window.onload = function () {
   // while the game is running
   function update() {
     text.text = "SCORE: " + currentScore;
-    text2.text2 = "LIVES: " + currentLives;
+    text2.text = "LIVES: " + currentLives;
     game.physics.arcade.collide(player, platforms);
     game.physics.arcade.overlap(player, items, itemHandler);
     game.physics.arcade.overlap(player, badges, badgeHandler);
